@@ -5,6 +5,10 @@
 natsbeat:
   # Defines how often an event is sent to the output
   period: 1s
+  uris:
+    - varz
+  natshost: localhost
+  natsmport: 8222
 
 #================================ General =====================================
 

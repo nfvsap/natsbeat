@@ -3263,14 +3263,14 @@ Kubernetes container image
 None
 
 
-*`counter`*::
+*`varz`*::
 +
 --
-type: long
+type: object
 
 required: True
 
-PLEASE UPDATE DOCUMENTATION
+The JSON object returned from NATS varz URI
 
 
 --

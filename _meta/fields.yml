@@ -2,8 +2,8 @@
   title: natsbeat
   description:
   fields:
-    - name: counter
-      type: long
+    - name: varz
+      type: object
       required: true
       description: >
-        PLEASE UPDATE DOCUMENTATION
+        The JSON object returned from NATS varz URI
