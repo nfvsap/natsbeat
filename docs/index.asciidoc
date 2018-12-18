@@ -1,0 +1,5 @@
+= Natsbeat Docs
+
+Welcome to the Natsbeat documentation.
+
+
