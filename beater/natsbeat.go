@@ -1,10 +1,7 @@
 package beater
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
-	"net/http"
 	"time"
 
 	"github.com/elastic/beats/libbeat/beat"
@@ -25,7 +22,7 @@ type Natsbeat struct {
 func New(b *beat.Beat, cfg *common.Config) (beat.Beater, error) {
 	c := config.DefaultConfig
 	if err := cfg.Unpack(&c); err != nil {
-		return nil, fmt.Errorf("Error reading config file: %v", err)
+		return nil, fmt.Errorf("error reading config file: %v", err)
 	}
 
 	bt := &Natsbeat{
@@ -55,18 +52,9 @@ func (bt *Natsbeat) Run(b *beat.Beat) error {
 
 		for _, uri := range bt.config.URIs {
 
-			body, err := GetJson(
-				fmt.Sprintf(
-					"http://%s:%d/%s",
-					bt.config.NATShost, bt.config.NATSmport, uri))
+			data, err := RetrieveData(bt.config, uri)
 			if err != nil {
-				logp.Err("failed to get NATS monitoring data from (%s): %v", uri, err)
-				continue
-			}
-
-			data := make(map[string]interface{})
-			if err := json.Unmarshal(body, &data); err != nil {
-				logp.Err("failed to unmarshal response: %v", err)
+				logp.Err("failed to retrieve data: %v", err)
 				continue
 			}
 
@@ -75,7 +63,7 @@ func (bt *Natsbeat) Run(b *beat.Beat) error {
 				Fields: common.MapStr{
 					"type": b.Info.Name,
 					"uri": uri,
-					"metrics": data,
+					"metrics": *data,
 				},
 			}
 			bt.client.Publish(event)
@@ -88,19 +76,4 @@ func (bt *Natsbeat) Run(b *beat.Beat) error {
 func (bt *Natsbeat) Stop() {
 	bt.client.Close()
 	close(bt.done)
-}
-
-func GetJson(url string) ([]byte, error) {
-	res, err := http.Get(url)
-	if err != nil {
-		return nil, fmt.Errorf("http get failed: %v", err)
-	}
-	defer res.Body.Close()
-
-	body, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		return nil, fmt.Errorf("failed to read response body %v", err)
-	}
-
-	return body, nil
 }
