@@ -53,31 +53,34 @@ func (bt *Natsbeat) Run(b *beat.Beat) error {
 		case <-ticker.C:
 		}
 
-		uri := bt.config.URIs[0]
-		body, err := GetJson(
-			fmt.Sprintf(
-				"http://%s:%d/%s",
-				bt.config.NATShost, bt.config.NATSmport, uri))
-		if err != nil {
-			fmt.Errorf("failed to get NATS monitoring data from (%s): %v", uri, err)
-			continue
-		}
+		for _, uri := range bt.config.URIs {
 
-		data := make(map[string]interface{})
-		if err := json.Unmarshal(body, &data); err != nil {
-			fmt.Errorf("failed to unmarshal response: %v", err)
-			continue
-		}
+			body, err := GetJson(
+				fmt.Sprintf(
+					"http://%s:%d/%s",
+					bt.config.NATShost, bt.config.NATSmport, uri))
+			if err != nil {
+				logp.Err("failed to get NATS monitoring data from (%s): %v", uri, err)
+				continue
+			}
 
-		event := beat.Event{
-			Timestamp: time.Now(),
-			Fields: common.MapStr{
-				"type": b.Info.Name,
-				"varz": data,
-			},
+			data := make(map[string]interface{})
+			if err := json.Unmarshal(body, &data); err != nil {
+				logp.Err("failed to unmarshal response: %v", err)
+				continue
+			}
+
+			event := beat.Event{
+				Timestamp: time.Now(),
+				Fields: common.MapStr{
+					"type": b.Info.Name,
+					"uri": uri,
+					"metrics": data,
+				},
+			}
+			bt.client.Publish(event)
+			logp.Info("Event sent")
 		}
-		bt.client.Publish(event)
-		logp.Info("Event sent")
 	}
 }
 

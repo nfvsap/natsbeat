@@ -2,8 +2,13 @@
   title: natsbeat
   description:
   fields:
-    - name: varz
+    - name: uri
+      type: string
+      required: true
+      description: >
+        The NATS Unique Resource Identifier
+    - name: metrics
       type: object
       required: true
       description: >
-        The JSON object returned from NATS varz URI
+        The JSON object returned from NATS URIs

@@ -3263,14 +3263,26 @@ Kubernetes container image
 None
 
 
-*`varz`*::
+*`uri`*::
++
+--
+type: string
+
+required: True
+
+The NATS Unique Resource Identifier
+
+
+--
+
+*`metrics`*::
 +
 --
 type: object
 
 required: True
 
-The JSON object returned from NATS varz URI
+The JSON object returned from NATS URIs
 
 
 --

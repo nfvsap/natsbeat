@@ -7,6 +7,9 @@ natsbeat:
   period: 1s
   uris:
     - varz
+    - connz
+    - routez
+    - subsz
   natshost: localhost
   natsmport: 8222
 
