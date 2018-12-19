@@ -1,5 +1,5 @@
 natsbeat
-Copyright 2018 Firstname Lastname
+Copyright 2018 Michael Katsoulis, Stamatis Katsaounis, Chris Mark
 
 This product includes software developed by The Apache Software
 Foundation (http://www.apache.org/).
