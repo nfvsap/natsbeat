@@ -1,9 +1,14 @@
 # Natsbeat
 
-Welcome to Natsbeat.
+Natsbeat is an elastic [Beat](https://www.elastic.co/products/beats) that reads
+metrics from [NATS](https://nats.io/) monitoring endpoints and indexes them into Elasticsearch database.
 
-Ensure that this folder is at the following location:
-`${GOPATH}/src/github.com/nfvsap/natsbeat`
+## Description
+
+> [NATS](https://nats.io/) is an open source messaging system for cloud native applications, IoT messaging, and microservices architectures
+
+When the monitoring port is enabled, the NATS server runs a lightweight web server on port 8222 with has several endpoints that return JSON objects.
+Natsbeat collects these metrics.
 
 ## Getting Started with Natsbeat
 
@@ -15,7 +20,9 @@ Ensure that this folder is at the following location:
 To get running with Natsbeat and also install the
 dependencies, run the following command:
 
-```
+```sh
+go get github.com/nfvsap/natsbeat
+cd $GOPATH/src/github.com/nfvsap/natsbeat
 make setup
 ```
 
@@ -35,16 +42,16 @@ For further development, check out the [beat developer guide](https://www.elasti
 To build the binary for Natsbeat run the command below. This will generate a binary
 in the same directory with the name natsbeat.
 
-```
+```sh
+cd $GOPATH/src/github.com/nfvsap/natsbeat
 make
 ```
-
 
 ### Run
 
 To run Natsbeat with debugging output enabled, run:
 
-```
+```sh
 ./natsbeat -c natsbeat.yml -e -d "*"
 ```
 
@@ -53,12 +60,12 @@ To run Natsbeat with debugging output enabled, run:
 
 To test Natsbeat, run the following command:
 
-```
+```sh
 make testsuite
 ```
 
 alternatively:
-```
+```sh
 make unit-tests
 make system-tests
 make integration-tests
@@ -72,7 +79,7 @@ The test coverage is reported in the folder `./build/coverage/`
 Each beat has a template for the mapping in elasticsearch and a documentation for the fields
 which is automatically generated based on `fields.yml` by running the following command.
 
-```
+```sh
 make update
 ```
 
@@ -81,13 +88,13 @@ make update
 
 To clean  Natsbeat source code, run the following command:
 
-```
+```sh
 make fmt
 ```
 
 To clean up the build directory and generated artifacts, run:
 
-```
+```sh
 make clean
 ```
 
@@ -96,7 +103,7 @@ make clean
 
 To clone Natsbeat from the git repository, run the following commands:
 
-```
+```sh
 mkdir -p ${GOPATH}/src/github.com/nfvsap/natsbeat
 git clone https://github.com/nfvsap/natsbeat ${GOPATH}/src/github.com/nfvsap/natsbeat
 ```
@@ -109,7 +116,7 @@ For further development, check out the [beat developer guide](https://www.elasti
 
 The beat frameworks provides tools to crosscompile and package your beat for different platforms. This requires [docker](https://www.docker.com/) and vendoring as described above. To build packages of your beat, run the following command:
 
-```
+```sh
 make release
 ```
 
