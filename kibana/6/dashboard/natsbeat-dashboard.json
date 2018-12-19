@@ -1,0 +1,71 @@
+{
+    "objects":[
+        {
+            "attributes":{
+                "description":"",
+                "kibanaSavedObjectMeta":{
+                    "searchSourceJSON":"{\"index\":\"29fb0280-036f-11e9-980d-c5ba02cd266a\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+                },
+                "title":"Natsbeat - Area Chart Over Time",
+                "uiStateJSON":"{}",
+                "version":1,
+                "visState":"{\"title\":\"Natsbeat - Area Chart Over Time\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average metrics.connections\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"area\",\"mode\":\"stacked\",\"data\":{\"label\":\"Average metrics.connections\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"stacked\",\"type\":\"area\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"data\":{\"id\":\"3\",\"label\":\"Average metrics.num_subscriptions\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"stacked\",\"type\":\"area\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"data\":{\"id\":\"4\",\"label\":\"Average metrics.slow_consumers\"},\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.connections\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.num_subscriptions\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.slow_consumers\"}}]}"
+            },
+            "id":"12fe0dc0-0374-11e9-980d-c5ba02cd266a",
+            "type":"visualization",
+            "updated_at":"2018-12-19T10:53:58.197Z",
+            "version":1
+        },
+        {
+            "attributes":{
+                "description":"",
+                "kibanaSavedObjectMeta":{
+                    "searchSourceJSON":"{\"index\":\"29fb0280-036f-11e9-980d-c5ba02cd266a\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+                },
+                "title":"Natsbeat - Generic Metrics Table",
+                "uiStateJSON":"{}",
+                "version":1,
+                "visState":"{\"title\":\"Natsbeat - Generic Metrics Table\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.num_subscriptions\",\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.connections\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.total_connections\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.tls_timeout\"}}]}"
+            },
+            "id":"70f41ec0-0373-11e9-980d-c5ba02cd266a",
+            "type":"visualization",
+            "updated_at":"2018-12-19T10:53:58.183Z",
+            "version":1
+        },
+        {
+            "attributes":{
+                "description":"",
+                "kibanaSavedObjectMeta":{
+                    "searchSourceJSON":"{\"index\":\"29fb0280-036f-11e9-980d-c5ba02cd266a\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+                },
+                "title":"Natsbeat - in/out metrics timeseries",
+                "uiStateJSON":"{}",
+                "version":1,
+                "visState":"{\"title\":\"Natsbeat - in/out metrics timeseries\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average metrics.cache_hit_rate\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Average metrics.cache_hit_rate\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"3\",\"label\":\"Average metrics.in_bytes\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"4\",\"label\":\"Average metrics.in_msgs\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"5\",\"label\":\"Average metrics.out_bytes\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"6\",\"label\":\"Average metrics.out_msgs\"},\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.cache_hit_rate\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.in_bytes\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.in_msgs\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.out_bytes\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"metrics.out_msgs\"}}]}"
+            },
+            "id":"dec5deb0-0374-11e9-980d-c5ba02cd266a",
+            "type":"visualization",
+            "updated_at":"2018-12-19T10:53:58.168Z",
+            "version":1
+        },
+        {
+            "attributes":{
+                "description":"",
+                "hits":0,
+                "kibanaSavedObjectMeta":{
+                    "searchSourceJSON":"{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+                },
+                "optionsJSON":"{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+                "panelsJSON":"[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":15,\"i\":\"1\"},\"version\":\"6.3.2\",\"type\":\"visualization\",\"id\":\"12fe0dc0-0374-11e9-980d-c5ba02cd266a\",\"embeddableConfig\":{}},{\"panelIndex\":\"2\",\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":15,\"i\":\"2\"},\"version\":\"6.3.2\",\"type\":\"visualization\",\"id\":\"70f41ec0-0373-11e9-980d-c5ba02cd266a\",\"embeddableConfig\":{}},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":15,\"w\":48,\"h\":14,\"i\":\"3\"},\"version\":\"6.3.2\",\"type\":\"visualization\",\"id\":\"dec5deb0-0374-11e9-980d-c5ba02cd266a\",\"embeddableConfig\":{}}]",
+                "timeRestore":false,
+                "title":"Basic Dashboard",
+                "version":1
+            },
+            "id":"9aba7a40-0375-11e9-980d-c5ba02cd266a",
+            "type":"dashboard",
+            "updated_at":"2018-12-19T10:53:57.684Z",
+            "version":1
+        }
+    ],
+    "version":"6.3.2"
+}
