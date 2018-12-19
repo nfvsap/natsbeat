@@ -55,6 +55,14 @@ To run Natsbeat with debugging output enabled, run:
 ./natsbeat -c natsbeat.yml -e -d "*"
 ```
 
+### Setup Kibana
+
+To automatically load the basic kibana dashboard for Natsbeat, run:
+
+```sh
+./natsbeat -v -e -d "*" setup -E setup.dashboards.enabled=true
+```
+
 
 ### Test
 
