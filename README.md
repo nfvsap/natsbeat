@@ -7,7 +7,7 @@ metrics from [NATS](https://nats.io/) monitoring endpoints and indexes them into
 
 > [NATS](https://nats.io/) is an open source messaging system for cloud native applications, IoT messaging, and microservices architectures
 
-When the monitoring port is enabled, the NATS server runs a lightweight web server on port 8222 with has several endpoints that return JSON objects.
+When the monitoring port is enabled, the NATS server runs a lightweight web server on port 8222 which exposes several endpoints that provide metrics in JSON format.
 Natsbeat collects these metrics.
 
 ## Getting Started with Natsbeat
