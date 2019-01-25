@@ -1,4 +1,4 @@
-This project is no longer maintained, since it is already ported to [Nats module of Beats](https://www.elastic.co/guide/en/beats/metricbeat/master/metricbeat-module-nats.html)
+This project is no longer maintained, since it is now ported to [Nats module of Beats](https://www.elastic.co/guide/en/beats/metricbeat/master/metricbeat-module-nats.html)
 
 # Natsbeat
 
